@@ -1,0 +1,45 @@
+
+Serving directories
+
+- We can use a middleware to configure how our express app.
+- there are some built in middleware present and also we can create our own middleware
+- We will use express.static("absoulte path of directory we want to server") which gives us a middleware to serve directories.
+- we will use use(middleware) to use that middleware.
+-  __dirname = gives the absolute path of our current dir
+
+--------------------------------------------------------------------
+ Templates
+
+-We can serve an html to user in 3 ways
+ -serve a directory containing html files
+ -return an html inside res.send("<h1>  </h1>")
+ -create a template and render it.
+
+Templates define a way to create reusable pieces of html which can take values on the fly and generate a custom html
+
+Handlebars.js - is a library that helps us define Templates
+hbs - it is a node js module that uses Handlebars.js internally and exposes its methods
+hbs will serve as a view engine for our app. We will set the view engine using set()
+
+By default express uses a "views" directory for its template files
+
+
+----------------------------------------------------------------------
+
+Middleware
+
+A middleware is a piece of code that changes the way the express handles your request. 
+It can contain any functionality that you want to add when a request is made, for eg:
+ - request logging
+ - authentication
+ - response handling , etc
+
+we need to "use" function to register a middleware.
+A middleware function has 3 parameters
+ req, res,next
+next() is called when we want to move on to next middleware if any or move forward to process the request.
+next() indicates that the middleware (calling next) has finished its functionality.
+
+Note: Middleware are executed in the order of occurance in the source file.
+
+-------------------------------------------------------------------------------------
