@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const hbs = require("hbs"); //Templates -- See Doc_help.txt
+const port = process.env.PORT || 3000; //Configuaration for heroku
 
 var app = express();
 
@@ -65,4 +66,4 @@ app.get('/bad', (req, res)=>{
 
 
 //This will listen for any incoming requests on the specified port
-app.listen(3000,() => console.log('Listening on port 3000....'));
+app.listen(port,() => console.log(`Listening on port ${port}....`));
